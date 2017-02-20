@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    class BinaryTree
+    class BinarySearchTree
     {
         Node root;
         int count = 0;
-        public BinaryTree()
+        public BinarySearchTree()
         {
             root = null;
         }
@@ -29,6 +29,26 @@ namespace BinarySearchTree
         public void Display()
         {
             root.TakeInNumber(root);
+        }
+        public bool search(Node node, int data)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.number == data)
+            {
+                return true;
+            }
+            else if (node.number < data)
+            {
+                return search(node.leftBranch, data);
+            }
+            else if (node.number > data)
+            {
+                return search(node.rightBranch, data);
+            }
+            return false;
         }
     }
 }

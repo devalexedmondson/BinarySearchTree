@@ -19,7 +19,7 @@ namespace BinarySearchTree
             leftBranch = default(Node);
         }
         public void InsertNode(ref Node root, int input)
-        {//any time you add a node you set it as a branch of the last node
+        {
             if (root == null)
             {
                 root = new Node(input);
@@ -33,26 +33,7 @@ namespace BinarySearchTree
                 InsertNode(ref root.rightBranch, input);
             }
         }
-        public bool search(Node node, int data)
-        {
-            if (node == null)
-            {
-                return false;
-            }
-            if (node.number == data)
-            {
-                return true;
-            }
-            else if (node.number < data)
-            {
-                return search(node.leftBranch, data);
-            }
-            else if (node.number > data)
-            {
-                return search(node.rightBranch, data);
-            }
-            return false;
-        }
+       
         public void TakeInNumber(Node node)
         {
             if (node == null)
